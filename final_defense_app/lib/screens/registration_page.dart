@@ -298,8 +298,20 @@ class _SignUpState extends State<SignUp> {
                       //   ),
                       // );
 
-                      Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => LoginPage()));
+                      // Navigator.of(context).push(
+                      //     MaterialPageRoute(builder: (context) => LoginPage()));
+
+                      if (nameController != null &&
+                          nameController.text == "abc" &&
+                          passwordController != null &&
+                          passwordController.text == "123") {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()));
+                      } else {
+                        _showAlertDialog();
+                      }
                     },
                     child: Container(
                       width: double.infinity,
@@ -359,6 +371,40 @@ class _SignUpState extends State<SignUp> {
     );
   }
 
+  void _showAlertDialog() {
+    showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: new Text('Registration Successful'),
+            // content: new Text('Please enter correct Username and Password'),
+            actions: <Widget>[
+              new MaterialButton(
+                  onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => LoginPage())),
+                  child: new Text('Okay'))
+            ],
+          );
+        });
+  }
+
   bool isObsecure = true;
   bool isObsecure2 = true;
 }
+
+
+
+
+	// body: Container(
+	// 	child: Center(
+	// 	child: ElevatedButton(
+	// 		onPressed: () {
+			
+	// 		},
+	// 		child: const Text("Show alert Dialog box"),
+	// 	),
+
+	// 	),
+	// ),
+

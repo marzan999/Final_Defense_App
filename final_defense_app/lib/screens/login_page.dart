@@ -1,4 +1,4 @@
-import 'package:final_defense_app/screens/home.dart';
+import 'package:final_defense_app/screens/generate_key_pair.dart';
 import 'package:final_defense_app/screens/registration_page.dart';
 import 'package:flutter/material.dart';
 
@@ -120,8 +120,8 @@ class _LoginPageState extends State<LoginPage> {
                         borderRadius: BorderRadius.circular(8))),
                   ),
                   onPressed: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => HomePage()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => GenerateKeyPair()));
                   },
                   child: Container(
                     width: double.infinity,
