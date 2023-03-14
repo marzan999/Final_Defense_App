@@ -342,11 +342,11 @@ class _SignUpState extends State<SignUp> {
                       backgroundColor: MaterialStatePropertyAll(Colors.white),
                     ),
                     onPressed: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //       builder: (context) => LoginPage(),
-                      //     ));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LoginPage(),
+                          ));
                     },
                     child: Container(
                       width: double.infinity,
